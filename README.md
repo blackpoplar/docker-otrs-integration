@@ -11,7 +11,7 @@ Clone this repo, then:
 
 ##Run
 
-Run with docker-compose up
+    docker-compose up
 
 ##Notes
 
