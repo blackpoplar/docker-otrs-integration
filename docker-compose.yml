@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mariadb:
+    image: mariadb:10.1.16
+    expose:
+      - "3306"
+    volumes: 
+      - ./mariadb/conf.d:/etc/mysql/conf.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=otrs
+      - MYSQL_DATABASE=otrs
+      - MYSQL_USER=otrs
+      - MYSQL_PASSWORD=otrs
+  otrs:
+    build: .
+    ports:
+      - "80"
+    links:
+      - mariadb:mariadb
+    command: /run.sh
+    entrypoint: /wait-for-it.sh -s -t 30 mariadb:3306 --
