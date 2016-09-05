@@ -1,0 +1,10 @@
+[mysqld]
+
+#OTRS settings
+max_allowed_packet=20M
+query_cache_size=32M
+innodb_log_file_size=256M
+
+#Enable utf8 support
+character_set_server   = utf8 
+collation_server       = utf8_general_ci
