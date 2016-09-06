@@ -17,6 +17,6 @@ echo "Add user for webservice ..." 1>&2
 echo "Add a Customer Company ..." 1>&2
 /bin/su -c "/opt/otrs/bin/otrs.Console.pl Admin::CustomerCompany::Add --customer-id test  --name 'Test Customer Company'" -s /bin/bash otrs
 echo "Add a Customer User ..." 1>&2
-/bin/su -c "/opt/otrs/bin/otrs.Console.pl Admin::CustomerUser::Add --user-name customer.test@localhost' --first-name Customer --last-name Test --email-address 'customer.test.otrs@opennms.org' --customer-id example" -s /bin/bash otrs
+/bin/su -c "/opt/otrs/bin/otrs.Console.pl Admin::CustomerUser::Add --user-name 'customer.test@localhost' --first-name Customer --last-name Test --email-address 'customer.test.otrs@opennms.org' --customer-id example" -s /bin/bash otrs
 echo "start webserver..." 1>&2
 /usr/sbin/httpd -D FOREGROUND
